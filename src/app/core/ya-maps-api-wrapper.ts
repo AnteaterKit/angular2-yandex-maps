@@ -4,6 +4,7 @@ import {Observer} from 'rxjs/Observer';
 
 import * as mapTypes from './ya-maps-types';
 import {YaMapsAPILoader} from './services/ya-maps-loader';
+import {YaMarker} from './directives/marker';
 
 declare var ymaps: any;
 
@@ -37,10 +38,10 @@ export class YaMapsAPIWrapper {
     }).catch( e => console.log(e));
   }
 
-  createMarker():
+  createMarker(marker: YaMarker):
       Promise<mapTypes.Marker> {
     return this._map.then((map: mapTypes.YandexMap) => {
-      var m = new ymaps.Placemark([55.847, 37.6], {});;
+      var m = new ymaps.Placemark([marker.latitude, marker.longitude], {});//([55.847, 37.6], {});
         map.geoObjects.add(m);
       return m;
     });

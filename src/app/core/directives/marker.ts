@@ -12,7 +12,9 @@ let markerId = 0;
   selector: 'ya-marker',
   providers: [
     YaMapsAPIWrapper
-  ]
+  ],
+  inputs: [
+    'latitude', 'longitude']
 })
 export class YaMarker //  implements OnDestroy, OnChanges, AfterContentInit 
 {

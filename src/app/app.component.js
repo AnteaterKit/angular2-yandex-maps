@@ -16,7 +16,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Hello {{name}}</h1>\n    <div>\n        <ya-map><ya-marker></ya-marker></ya-map>\n    </div>\n  ",
+            template: "<h1>Hello {{name}}</h1>\n    <div>\n        <ya-map>\n          <ya-marker [latitude]=\"55.847\" [longitude]=\"38.6\">\n          </ya-marker>\n           <ya-marker [latitude]=\"55.847\" [longitude]=\"35.6\">\n          </ya-marker>\n        </ya-map>\n    </div>\n  ",
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -33,10 +33,9 @@ var YaMapsAPIWrapper = (function () {
             return;
         }).catch(function (e) { return console.log(e); });
     };
-    YaMapsAPIWrapper.prototype.createMarker = function () {
+    YaMapsAPIWrapper.prototype.createMarker = function (marker) {
         return this._map.then(function (map) {
-            var m = new ymaps.Placemark([55.847, 37.6], {});
-            ;
+            var m = new ymaps.Placemark([marker.latitude, marker.longitude], {}); //([55.847, 37.6], {});
             map.geoObjects.add(m);
             return m;
         });

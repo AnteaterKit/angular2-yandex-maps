@@ -39,7 +39,9 @@ var YaMarker //  implements OnDestroy, OnChanges, AfterContentInit
             selector: 'ya-marker',
             providers: [
                 ya_maps_api_wrapper_1.YaMapsAPIWrapper
-            ]
+            ],
+            inputs: [
+                'latitude', 'longitude']
         }), 
         __metadata('design:paramtypes', [marker_manager_1.MarkerManager])
     ], YaMarker //  implements OnDestroy, OnChanges, AfterContentInit 

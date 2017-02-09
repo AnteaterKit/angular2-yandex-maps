@@ -30,7 +30,7 @@ export class MarkerManager {
 
   addMarker(marker: YaMarker) {
       console.log('market add');
-    const markerPromise = this._mapsWrapper.createMarker();
+    const markerPromise = this._mapsWrapper.createMarker(marker);
     this._markers.set(marker, markerPromise);
   }
 
