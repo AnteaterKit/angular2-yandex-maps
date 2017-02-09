@@ -10,7 +10,8 @@ declare var ymaps: any;
 @Injectable()
 export class YaMapsAPIWrapper {
 
-    private _map: Promise<mapTypes.YandexMap>;
+    
+     _map: Promise<mapTypes.YandexMap>;
      private _mapResolver: (value?: mapTypes.YandexMap) => void;
 
     constructor(private _loader: YaMapsAPILoader, private _zone: NgZone) {
@@ -23,12 +24,26 @@ export class YaMapsAPIWrapper {
     {
       const map = new ymaps.Map(el, mapOptions);
         this._mapResolver(<mapTypes.YandexMap>map);
-    }, 5000);
+       console.log('Mauu');
+       //  this.createMarker();
+    }, 10000);
     return this._loader.load().then(() => {
         console.log('Ma');
         const map = new ymaps.Map(el, mapOptions);
-        this._mapResolver(<mapTypes.YandexMap>map);
+        this._mapResolver(<mapTypes.YandexMap>map)
+       
+        
         return;
     }).catch( e => console.log(e));
   }
+
+  createMarker():
+      Promise<mapTypes.Marker> {
+    return this._map.then((map: mapTypes.YandexMap) => {
+      var m = new ymaps.Placemark([55.847, 37.6], {});;
+        map.geoObjects.add(m);
+      return m;
+    });
+  }
+  
 }

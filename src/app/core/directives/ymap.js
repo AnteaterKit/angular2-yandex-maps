@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ya_maps_api_wrapper_1 = require('../ya-maps-api-wrapper');
+var marker_manager_1 = require('../services/managers/marker-manager');
 var YaMap = (function () {
     function YaMap(_elem, _mapsWrapper) {
         this._elem = _elem;
@@ -30,9 +31,10 @@ var YaMap = (function () {
         core_1.Component({
             selector: 'ya-map',
             providers: [
-                ya_maps_api_wrapper_1.YaMapsAPIWrapper
+                ya_maps_api_wrapper_1.YaMapsAPIWrapper,
+                marker_manager_1.MarkerManager
             ],
-            template: "\n    <div class=\"map-container-inner\" id=\"map\" style=\"width: 600px; height: 400px\"></div>\n  "
+            template: "\n    <div class=\"map-container-inner\" id=\"map\" style=\"width: 600px; height: 400px\">\n      <ng-content></ng-content>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, ya_maps_api_wrapper_1.YaMapsAPIWrapper])
     ], YaMap);

@@ -5,7 +5,7 @@ import { YaMap }  from './core/directives/ymap';
   selector: 'my-app',
   template: `<h1>Hello {{name}}</h1>
     <div>
-        <ya-map></ya-map>
+        <ya-map><ya-marker></ya-marker></ya-map>
     </div>
   `,
 })

@@ -1,14 +1,18 @@
 import {Component, ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 
 import {YaMapsAPIWrapper} from '../ya-maps-api-wrapper';
+import {MarkerManager} from '../services/managers/marker-manager';
 
 @Component({
   selector: 'ya-map',
   providers: [
-    YaMapsAPIWrapper
+    YaMapsAPIWrapper,
+    MarkerManager
   ],
   template: `
-    <div class="map-container-inner" id="map" style="width: 600px; height: 400px"></div>
+    <div class="map-container-inner" id="map" style="width: 600px; height: 400px">
+      <ng-content></ng-content>
+    </div>
   `
 })
 export class YaMap implements  OnInit
