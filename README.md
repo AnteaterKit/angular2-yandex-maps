@@ -1,4 +1,4 @@
-# Angular 2 yandex maps
+# [Angular2]: https://angular.io/
 
 
 
