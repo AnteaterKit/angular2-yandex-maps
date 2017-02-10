@@ -9,6 +9,9 @@ import {MarkerManager} from '../services/managers/marker-manager';
     YaMapsAPIWrapper,
     MarkerManager
   ],
+  inputs: [
+    'longitude', 'latitude', 'zoom', 'minZoom', 'maxZoom']
+    ,
   template: `
     <div class="map-container-inner" id="map" style="width: 600px; height: 400px">
       <ng-content></ng-content>
@@ -17,6 +20,13 @@ import {MarkerManager} from '../services/managers/marker-manager';
 })
 export class YaMap implements  OnInit
 {
+
+  longitude: number = 0; 
+  latitude: number = 0;
+  zoom: number = 8;
+  minZoom: number;
+  maxZoom: number;
+
     constructor(private _elem: ElementRef, private _mapsWrapper: YaMapsAPIWrapper) {}
 
     ngOnInit() {
@@ -26,7 +36,7 @@ export class YaMap implements  OnInit
     }
      private _initMapInstance(el: HTMLElement) {
           console.log('_initMapInstance');
-           this._mapsWrapper.createMap(el, {center: [55.76, 37.64],  zoom: 7}).
+           this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom}).
            then((x) => console.log(x))
            .catch((e) => console.log(e));
             console.log('_initMapInstance rrrr');
