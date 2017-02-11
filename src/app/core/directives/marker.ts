@@ -28,14 +28,12 @@ export class YaMarker //  implements OnDestroy, OnChanges, AfterContentInit
     constructor(private _markerManager: MarkerManager)
     {
         this._id = (markerId++).toString();
-        console.log(this._id);
         this._markerManager.addMarker(this);
     }
 
  
   ngOnChanges(changes: {[key: string]: SimpleChange}) {
    
-  console.log('swsw');
     if (!this._markerAddedToManger) {
       this._markerManager.addMarker(this);
       this._markerAddedToManger = true;

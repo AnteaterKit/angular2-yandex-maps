@@ -21,12 +21,10 @@ var YaMarker //  implements OnDestroy, OnChanges, AfterContentInit
         this._markerAddedToManger = false;
         this._observableSubscriptions = [];
         this._id = (markerId++).toString();
-        console.log(this._id);
         this._markerManager.addMarker(this);
     }
     YaMarker //  implements OnDestroy, OnChanges, AfterContentInit 
     .prototype.ngOnChanges = function (changes) {
-        console.log('swsw');
         if (!this._markerAddedToManger) {
             this._markerManager.addMarker(this);
             this._markerAddedToManger = true;

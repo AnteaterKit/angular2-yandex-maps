@@ -16,31 +16,20 @@ export class YaMapsAPILoader
     }
 
     load():  Promise<void> {
-        
-
         const script = this._documentRef.getNativeDocument().createElement('script');
         script.type = 'text/javascript';
-        script.async = true;
+        script.async = false;
         script.defer = true;
-       // const callbackName: string = `angular2YAMapsAPILoader`;
-        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';//this._getScriptSrc;//" var map = new ymaps.Map('map', { center: [55.76, 37.64],   zoom: 7 })";
-      
-         this._scriptLoadingPromise = new Promise<void>((resolve: Function, reject: Function) => {
-            this. get = () => { resolve(); };
-           // script.onLoad = () => {resolve();};
+        script.id = 'YaScript';
+        const callbackName: string = `angular2YAMapsAPILoader`;
+        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&callback=angular2YAMapsAPILoader';
+         
+        this._scriptLoadingPromise = new Promise<void>((resolve: Function, reject: Function) => {
+            script.onload = () => {resolve();};
             script.onerror = (error: Event) => { reject(); };
         });
-this._documentRef.getNativeDocument().body.appendChild(script);
- 
-       // this._documentRef.getNativeDocument().body.appendChild(script);
-     //   console.log(this._scriptLoadingPromise);
+        this._documentRef.getNativeDocument().body.appendChild(script);
         return this._scriptLoadingPromise;
-        //return new Promise((resolve, reject) => {
-        //    resolve();
-       // });
     }
-
-  get()
-  {}
 
 }

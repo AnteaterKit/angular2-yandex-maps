@@ -32,7 +32,6 @@ var MarkerManager = (function () {
         });
     };
     MarkerManager.prototype.addMarker = function (marker) {
-        console.log('market add');
         var markerPromise = this._mapsWrapper.createMarker(marker);
         this._markers.set(marker, markerPromise);
     };

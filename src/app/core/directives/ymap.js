@@ -22,13 +22,10 @@ var YaMap = (function () {
     YaMap.prototype.ngOnInit = function () {
         var container = this._elem.nativeElement.querySelector('.map-container-inner');
         this._initMapInstance(container);
+        // console.log(t);
     };
     YaMap.prototype._initMapInstance = function (el) {
-        console.log('_initMapInstance');
-        this._mapsWrapper.createMap(el, { center: [this.latitude, this.longitude], zoom: this.zoom }).
-            then(function (x) { return console.log(x); })
-            .catch(function (e) { return console.log(e); });
-        console.log('_initMapInstance rrrr');
+        return this._mapsWrapper.createMap(el, { center: [this.latitude, this.longitude], zoom: this.zoom });
     };
     YaMap = __decorate([
         core_1.Component({

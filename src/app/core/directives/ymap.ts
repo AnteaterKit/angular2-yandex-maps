@@ -31,14 +31,11 @@ export class YaMap implements  OnInit
 
     ngOnInit() {
         const container = this._elem.nativeElement.querySelector('.map-container-inner');
-       
-        this._initMapInstance(container);
+       this._initMapInstance(container);
+       // console.log(t);
     }
      private _initMapInstance(el: HTMLElement) {
-          console.log('_initMapInstance');
-           this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom}).
-           then((x) => console.log(x))
-           .catch((e) => console.log(e));
-            console.log('_initMapInstance rrrr');
+          return this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom});
+            
     }
 }
