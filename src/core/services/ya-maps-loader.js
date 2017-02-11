@@ -16,26 +16,25 @@ var YaMapsAPILoader = (function () {
         this._documentRef = d;
     }
     YaMapsAPILoader.prototype.load = function () {
-        var _this = this;
         var script = this._documentRef.getNativeDocument().createElement('script');
         script.type = 'text/javascript';
-        script.async = true;
+        script.async = false;
         script.defer = true;
+        script.id = 'YaScript';
         var callbackName = "angular2YAMapsAPILoader";
-        script.src = " var map = new ymaps.Map('map', { center: [55.76, 37.64],   zoom: 7 })";
+        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&callback=angular2YAMapsAPILoader';
         this._scriptLoadingPromise = new Promise(function (resolve, reject) {
-            _this._windowRef.getNativeWindow()[callbackName] = function () { resolve(); };
-            script.onerror = function (error) { reject(error); };
+            script.onload = function () { resolve(); };
+            script.onerror = function (error) { reject(); };
         });
         this._documentRef.getNativeDocument().body.appendChild(script);
         return this._scriptLoadingPromise;
     };
     YaMapsAPILoader = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof browser_globals_1.WindowRef !== 'undefined' && browser_globals_1.WindowRef) === 'function' && _a) || Object, (typeof (_b = typeof browser_globals_1.DocumentRef !== 'undefined' && browser_globals_1.DocumentRef) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [browser_globals_1.WindowRef, browser_globals_1.DocumentRef])
     ], YaMapsAPILoader);
     return YaMapsAPILoader;
-    var _a, _b;
 }());
 exports.YaMapsAPILoader = YaMapsAPILoader;
 //# sourceMappingURL=ya-maps-loader.js.map

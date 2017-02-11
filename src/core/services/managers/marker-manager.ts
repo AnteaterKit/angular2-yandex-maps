@@ -17,7 +17,6 @@ export class MarkerManager {
   deleteMarker(marker: YaMarker): Promise<void> {
     const m = this._markers.get(marker);
     if (m == null) {
-      // marker already deleted
       return Promise.resolve();
     }
     return m.then((m: Marker) => {

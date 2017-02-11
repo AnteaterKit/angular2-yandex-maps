@@ -21,7 +21,6 @@ var MarkerManager = (function () {
         var _this = this;
         var m = this._markers.get(marker);
         if (m == null) {
-            // marker already deleted
             return Promise.resolve();
         }
         return m.then(function (m) {

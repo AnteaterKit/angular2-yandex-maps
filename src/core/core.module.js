@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ymap_1 = require('./directives/ymap');
+var marker_1 = require('./directives/marker');
 var ya_maps_loader_1 = require('./services/ya-maps-loader');
 var browser_globals_1 = require('./utils/browser-globals');
 /**
@@ -17,7 +18,8 @@ var browser_globals_1 = require('./utils/browser-globals');
  */
 function coreDirectives() {
     return [
-        ymap_1.YaMap
+        ymap_1.YaMap,
+        marker_1.YaMarker
     ];
 }
 exports.coreDirectives = coreDirectives;
