@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var ya_maps_loader_1 = require('./services/ya-maps-loader');
-var browser_globals_1 = require('./utils/browser-globals');
+var core_1 = require("@angular/core");
+var ya_maps_loader_1 = require("./services/ya-maps-loader");
+var browser_globals_1 = require("./utils/browser-globals");
 var YaMapsAPIWrapper = (function () {
     function YaMapsAPIWrapper(_loader, _zone, d) {
         var _this = this;
@@ -45,11 +45,11 @@ var YaMapsAPIWrapper = (function () {
     YaMapsAPIWrapper.prototype.checkYaSciptLoaded = function () {
         return this._documentRef.getNativeDocument().getElementById('YaScript');
     };
-    YaMapsAPIWrapper = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [ya_maps_loader_1.YaMapsAPILoader, core_1.NgZone, browser_globals_1.DocumentRef])
-    ], YaMapsAPIWrapper);
     return YaMapsAPIWrapper;
 }());
+YaMapsAPIWrapper = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [ya_maps_loader_1.YaMapsAPILoader, core_1.NgZone, browser_globals_1.DocumentRef])
+], YaMapsAPIWrapper);
 exports.YaMapsAPIWrapper = YaMapsAPIWrapper;
 //# sourceMappingURL=ya-maps-api-wrapper.js.map

@@ -1,0 +1,1 @@
+exports.YaCoreModule = require('./src/core/core.module').YaCoreModule;

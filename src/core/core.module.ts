@@ -15,7 +15,7 @@ export function coreDirectives() {
 };
 
 /**
- * The angular-google-maps core module. Contains all Directives/Services/Pipes
+ * The angular-ya-maps core module. Contains all Directives/Services/Pipes
  * of the core module. Please use `YaCoreModule.forRoot()` in your app module.
  */
 @NgModule({declarations: coreDirectives(), exports: coreDirectives()})
