@@ -48,5 +48,5 @@ npm install angular2-yandex-maps
           </ya-marker>
  </ya-map>
 ```
-
-
+#### Plnkr
+https://plnkr.co/edit/2m3qE90MxPghI9DKjML6?p=preview
