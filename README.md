@@ -5,11 +5,12 @@
 Yandex Maps API as an Angular2 direcitive.
 
 #### Install
+```bash 
 npm install angular2-yandex-maps
+```
 
 #### Systemjs.config.js
-
-```
+```js
 
 (function (global) {
   System.config({
@@ -38,7 +39,7 @@ npm install angular2-yandex-maps
 
 ### API
 
-####Тег ya-map & ya-marker:
+#### Тег ya-map & ya-marker:
 ```html
  <ya-map [latitude]="55.76" [longitude]="37.64">
           <ya-marker [latitude]="55.847" [longitude]="38.6">
