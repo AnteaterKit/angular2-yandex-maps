@@ -30,7 +30,7 @@ export class YaMapsAPIWrapper {
                   if(ymaps.Map)
                   {
                     const map = new ymaps.Map(el, mapOptions);
-                    this._mapResolver(<mapTypes.YandexMap>map);
+                    this._mapResolver(<mapTypes.YandexMap>map);            
                   }
                   else{
                     create();
@@ -46,9 +46,13 @@ export class YaMapsAPIWrapper {
     return this._map.then((map: mapTypes.YandexMap) => {
         var m = new ymaps.Placemark([marker.latitude, marker.longitude], 
               { 
+               
                 balloonContentHeader: marker.balloonContentHeader,
                 balloonContentBody: marker.balloonContentBody,
                 balloonContentFooter: marker.balloonContentFooter
+              },
+              {
+                 draggable: marker.draggable
               });
         map.geoObjects.add(m);
         return m;

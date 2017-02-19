@@ -18,6 +18,7 @@ export interface Marker extends MVCObject {
     balloonContentHeader: string;
     balloonContentBody: string;
     balloonContentFooter: string;
+    draggable: boolean;
 }
 export interface LatLngLiteral {
     lat: number;
@@ -28,6 +29,15 @@ export interface MVCObject {
 }
 export interface MapsEventListener {
     remove(): void;
+}
+export interface MouseEvent {
+    latLng: LatLng;
+    get: any;
+}
+export interface MapMouseEvent {
+    lat: number;
+    lng: number;
+    nativeMarker: any;
 }
 export interface MapOptions {
     zoom?: number;

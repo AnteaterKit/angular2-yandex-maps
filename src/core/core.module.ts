@@ -4,6 +4,8 @@ import {YaMarker} from './directives/marker';
 import {YaMapsAPILoader} from './services/ya-maps-loader';
 import {BROWSER_GLOBALS_PROVIDERS} from './utils/browser-globals';
 
+export * from './ya-maps-types';
+
 /**
  * @internal
  */
