@@ -4,6 +4,10 @@
 
 Yandex Maps API as an Angular2 direcitive.
 
+
+#### Libe Demo Plnkr
+https://plnkr.co/edit/2m3qE90MxPghI9DKjML6?p=preview
+
 #### Install
 ```bash 
 npm install angular2-yandex-maps
@@ -48,5 +52,3 @@ npm install angular2-yandex-maps
           </ya-marker>
  </ya-map>
 ```
-#### Plnkr
-https://plnkr.co/edit/2m3qE90MxPghI9DKjML6?p=preview
