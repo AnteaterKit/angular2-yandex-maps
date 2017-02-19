@@ -6,7 +6,10 @@ Yandex Maps API as an Angular2 direcitive.
 
 
 #### Libe Demo Plnkr
+Simple marker with balloon
 https://plnkr.co/edit/2m3qE90MxPghI9DKjML6?p=preview
+ngFor markers with draggable
+https://plnkr.co/edit/8njMNbV9vjYTSfyP3fxI
 
 #### Install
 ```bash 
