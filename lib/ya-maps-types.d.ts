@@ -12,6 +12,12 @@ export interface Marker extends MVCObject {
     constructor(): void;
     setMap(map: YandexMap): void;
     setPosition(latLng: LatLng | LatLngLiteral): void;
+    events: any;
+    balloon: any;
+    layoutBalloon: any;
+    balloonContentHeader: string;
+    balloonContentBody: string;
+    balloonContentFooter: string;
 }
 export interface LatLngLiteral {
     lat: number;

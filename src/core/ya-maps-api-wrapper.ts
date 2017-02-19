@@ -44,11 +44,18 @@ export class YaMapsAPIWrapper {
 
   createMarker(marker: YaMarker): Promise<mapTypes.Marker> {
     return this._map.then((map: mapTypes.YandexMap) => {
-        var m = new ymaps.Placemark([marker.latitude, marker.longitude], {});
-          map.geoObjects.add(m);
+        var m = new ymaps.Placemark([marker.latitude, marker.longitude], 
+              { 
+                balloonContentHeader: marker.balloonContentHeader,
+                balloonContentBody: marker.balloonContentBody,
+                balloonContentFooter: marker.balloonContentFooter
+              });
+        map.geoObjects.add(m);
         return m;
     });
   }
+
+  
 
   checkYaSciptLoaded()
   {
