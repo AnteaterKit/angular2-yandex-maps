@@ -42,6 +42,28 @@ export class YaMapsAPIWrapper {
       return res;
   }
 
+  setCenter(latitude: number, longitude: number)
+  {
+      this._map.then((map: mapTypes.YandexMap) => {
+          map.setCenter([latitude, longitude]);
+      });
+  }
+
+  getCenter(): Promise<void>
+  {
+       return this._map.then((map: mapTypes.YandexMap) => {
+          return map.getCenter();
+      });
+  }
+
+  subscribeToMapEvent<E>(eventName: string): Observable<E> {
+    return Observable.create((observer: Observer<E>) => {
+      this._map.then((m: mapTypes.YandexMap) => {
+        m.events.add(eventName, (arg: E) => { this._zone.run(() => observer.next(arg)); });
+      });
+    });
+  }
+
   createMarker(marker: YaMarker): Promise<mapTypes.Marker> {
     return this._map.then((map: mapTypes.YandexMap) => {
         var m = new ymaps.Placemark([marker.latitude, marker.longitude], 
@@ -59,7 +81,6 @@ export class YaMapsAPIWrapper {
     });
   }
 
-  
 
   checkYaSciptLoaded()
   {

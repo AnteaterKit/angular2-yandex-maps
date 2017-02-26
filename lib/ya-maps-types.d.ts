@@ -2,6 +2,9 @@ export declare var yandex: any;
 export interface YandexMap extends MVCObject {
     constructor(el: HTMLElement, opts?: MapOptions): void;
     geoObjects: any;
+    setCenter(param: any[]): void;
+    getCenter(): any;
+    events: any;
 }
 export interface LatLng {
     constructor(lat: number, lng: number): void;
@@ -34,6 +37,10 @@ export interface MouseEvent {
     latLng: LatLng;
     get: any;
 }
+export interface MapClickMouseEvent {
+    lat: number;
+    lng: number;
+}
 export interface MapMouseEvent {
     lat: number;
     lng: number;
@@ -44,4 +51,5 @@ export interface MapOptions {
     minZoom?: number;
     maxZoom?: number;
     center?: any;
+    type: any;
 }
