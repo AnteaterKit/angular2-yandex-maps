@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import * as mapTypes from './ya-maps-types';
 import { YaMapsAPILoader } from './services/ya-maps-loader';
 import { YaMarker } from './directives/marker';
+import { YaClaster } from './directives/claster';
 import { DocumentRef } from './utils/browser-globals';
 export declare class YaMapsAPIWrapper {
     private _loader;
@@ -16,5 +17,6 @@ export declare class YaMapsAPIWrapper {
     getCenter(): Promise<void>;
     subscribeToMapEvent<E>(eventName: string): Observable<E>;
     createMarker(marker: YaMarker): Promise<mapTypes.Marker>;
+    createClaster(claster: YaClaster): Promise<mapTypes.Claster>;
     checkYaSciptLoaded(): any;
 }

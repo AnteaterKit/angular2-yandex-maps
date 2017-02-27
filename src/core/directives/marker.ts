@@ -18,7 +18,7 @@ let markerId = 0;
     'latitude', 'longitude', 'balloonLayout', 'balloonContentHeader', 'balloonContentBody', 'balloonContentFooter', 'draggable'],
   outputs: ['markerClick', 'dragEnd']
 })
-export class YaMarker implements OnChanges, OnDestroy //  implements OnDestroy, OnChanges, AfterContentInit 
+export class YaMarker implements OnChanges, OnDestroy  
 {
     latitude: number;
     longitude: number;

@@ -28,6 +28,21 @@ export interface Marker extends MVCObject {
   draggable: boolean;
 }
 
+export interface Claster
+{
+   constructor(): void;
+}
+
+export interface MarkerClaster
+{
+   lat: number;
+   lng: number;
+   balloonContentHeader: string;
+   balloonContentBody: string;
+   balloonContentFooter: string;
+   type: string;
+}
+
 export interface LatLngLiteral {
   lat: number;
   lng: number;

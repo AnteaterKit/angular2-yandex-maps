@@ -3,13 +3,15 @@ import {Subscription} from 'rxjs/Subscription';
 
 import {YaMapsAPIWrapper} from '../ya-maps-api-wrapper';
 import {MarkerManager} from '../services/managers/marker-manager';
+import {ClasterManager} from '../services/managers/claster-manager';
 import * as mapTypes from '../ya-maps-types';
 
 @Component({
   selector: 'ya-map',
   providers: [
     YaMapsAPIWrapper,
-    MarkerManager
+    MarkerManager,
+    ClasterManager
   ],
   inputs: [
     'longitude', 'latitude', 'zoom', 'minZoom', 'maxZoom', 'mapType'],

@@ -5,6 +5,7 @@ import {Observer} from 'rxjs/Observer';
 import * as mapTypes from './ya-maps-types';
 import {YaMapsAPILoader} from './services/ya-maps-loader';
 import {YaMarker} from './directives/marker';
+import {YaClaster} from './directives/claster';
 import {DocumentRef, WindowRef} from './utils/browser-globals';
 
 declare var ymaps: any;
@@ -81,6 +82,31 @@ export class YaMapsAPIWrapper {
     });
   }
 
+  createClaster(claster: YaClaster): Promise<mapTypes.Claster> 
+  {
+      return this._map.then((map: mapTypes.YandexMap) => {
+        
+            if(claster.markers.length == 0)
+                return;
+
+            let myGeoObjects: Array<any>;
+            myGeoObjects = new Array<any>();
+            claster.markers.forEach((x: mapTypes.MarkerClaster) =>
+            {
+                let point = new ymaps.GeoObject({
+                              geometry: { type: x.type, coordinates: [x.lat, x.lng] }
+                          });
+                myGeoObjects.push(point);
+            });
+
+            var clusterer = new ymaps.Clusterer({});
+            clusterer.add(myGeoObjects);
+            map.geoObjects.add(clusterer);
+
+            return clusterer;
+          });
+
+  }
 
   checkYaSciptLoaded()
   {

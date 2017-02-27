@@ -1,6 +1,7 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {YaMap} from './directives/ymap';
 import {YaMarker} from './directives/marker';
+import {YaClaster} from './directives/claster';
 import {YaMapsAPILoader} from './services/ya-maps-loader';
 import {BROWSER_GLOBALS_PROVIDERS} from './utils/browser-globals';
 
@@ -12,7 +13,8 @@ export * from './ya-maps-types';
 export function coreDirectives() {
   return [
     YaMap,
-    YaMarker
+    YaMarker,
+    YaClaster
   ];
 };
 
