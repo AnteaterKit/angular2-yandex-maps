@@ -14,6 +14,8 @@ https://plnkr.co/edit/8njMNbV9vjYTSfyP3fxI?p=preview
 https://plnkr.co/edit/9K1fAZbpgDDoZYUfIdVo?p=preview
 #### Claster
 https://plnkr.co/edit/rpJpm8FnWWsuJoScAFAN?p=preview
+#### Icon Presets
+https://plnkr.co/edit/dm8EJt8Waa61yKsZRRrM?p=preview
 
 #### Install
 ```bash 
