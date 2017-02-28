@@ -72,10 +72,12 @@ export class YaMapsAPIWrapper {
                
                 balloonContentHeader: marker.balloonContentHeader,
                 balloonContentBody: marker.balloonContentBody,
-                balloonContentFooter: marker.balloonContentFooter
+                balloonContentFooter: marker.balloonContentFooter,
+                iconContent: marker.iconContent
               },
               {
-                 draggable: marker.draggable
+                 draggable: marker.draggable,
+                 preset: marker.preset
               });
         map.geoObjects.add(m);
         return m;

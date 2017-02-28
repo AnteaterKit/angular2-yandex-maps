@@ -15,7 +15,7 @@ let markerId = 0;
     YaMapsAPIWrapper
   ],
   inputs: [
-    'latitude', 'longitude', 'balloonLayout', 'balloonContentHeader', 'balloonContentBody', 'balloonContentFooter', 'draggable'],
+    'latitude', 'longitude', 'balloonLayout', 'balloonContentHeader', 'balloonContentBody', 'balloonContentFooter', 'draggable', 'preset', 'iconContent'],
   outputs: ['markerClick', 'dragEnd']
 })
 export class YaMarker implements OnChanges, OnDestroy  
@@ -27,6 +27,8 @@ export class YaMarker implements OnChanges, OnDestroy
     balloonContentBody: string;
     balloonContentFooter: string;
     draggable: boolean = false;
+    preset: string = 'islands#blueIcon';
+    iconContent: string;
 
     private _markerAddedToManger: boolean = false;
     private _id: string;
