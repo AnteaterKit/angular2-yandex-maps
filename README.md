@@ -10,6 +10,10 @@ Yandex Maps API as an Angular2 direcitive.
 https://plnkr.co/edit/2m3qE90MxPghI9DKjML6?p=preview
 #### ngFor markers with draggable
 https://plnkr.co/edit/8njMNbV9vjYTSfyP3fxI?p=preview
+#### Change map position
+https://plnkr.co/edit/9K1fAZbpgDDoZYUfIdVo?p=preview
+#### Claster
+https://plnkr.co/edit/rpJpm8FnWWsuJoScAFAN?p=preview
 
 #### Install
 ```bash 
