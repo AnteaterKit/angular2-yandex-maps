@@ -2,7 +2,7 @@
 
 #### Angular2 maps 
 
-Yandex Maps API as an Angular2 direcitive.
+![Yandex Maps API as an Angular2 direcitive](https://raw.githubusercontent.com/AnteaterKit/angular2-yandex-maps/master/ya-an.png)
 
 
 #### Libe Demo Plnkr
