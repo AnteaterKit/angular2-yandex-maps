@@ -1,11 +1,11 @@
 [Angular2]: https://angular.io/
 
-#### Angular2 maps 
+#### Yandex Maps API as an Angular2 direcitive
 
 ![Yandex Maps API as an Angular2 direcitive](https://raw.githubusercontent.com/AnteaterKit/angular2-yandex-maps/master/ya-an.png)
 
 
-#### Libe Demo Plnkr
+#### Live Demo Plnkr
 #### Simple marker with balloon
 https://plnkr.co/edit/2m3qE90MxPghI9DKjML6?p=preview
 #### ngFor markers with draggable
