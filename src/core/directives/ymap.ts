@@ -18,7 +18,7 @@ import * as mapTypes from '../ya-maps-types';
      outputs: ['mapClick', 'actionTick']
     ,
   template: `
-    <div class="map-container-inner" id="map" style="width: 600px; height: 400px">
+    <div class="map-container-inner" id="map" >
       <ng-content></ng-content>
     </div>
   `
