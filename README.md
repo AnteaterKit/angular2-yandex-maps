@@ -61,3 +61,11 @@ npm install angular2-yandex-maps
           </ya-marker>
  </ya-map>
 ```
+Style.css
+```
+.map-container-inner
+{
+   width: 300px;
+   height: 200px;
+}
+```
