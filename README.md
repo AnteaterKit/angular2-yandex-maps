@@ -3,6 +3,8 @@
 ![Yandex Maps API as an Angular2 components](https://raw.githubusercontent.com/AnteaterKit/angular2-yandex-maps/master/ya-an.png)
 #### Yandex Maps API as an Angular2 components
 
+[Wiki](https://github.com/AnteaterKit/angular2-yandex-maps/wiki)
+
 <!-- HTML CODE-->
  <a href="https://snyk.io/test/npm/angular2-yandex-maps"><img src="https://snyk.io/test/npm/angular2-yandex-maps/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/npm/angular2-yandex-maps" style="max-width:100%;"></a>
  [![npm version](https://badge.fury.io/js/angular2-yandex-maps.svg)](http://badge.fury.io/js/angular2-yandex-maps)
