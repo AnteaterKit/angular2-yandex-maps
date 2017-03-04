@@ -1,8 +1,8 @@
 [Angular2]: https://angular.io/
 
-#### Yandex Maps API as an Angular2 direcitive
+#### Yandex Maps API as an Angular2 components
 
-![Yandex Maps API as an Angular2 direcitive](https://raw.githubusercontent.com/AnteaterKit/angular2-yandex-maps/master/ya-an.png)
+![Yandex Maps API as an Angular2 components](https://raw.githubusercontent.com/AnteaterKit/angular2-yandex-maps/master/ya-an.png)
 
 
 <!-- HTML CODE-->
