@@ -14,7 +14,7 @@ import * as mapTypes from '../ya-maps-types';
     ClasterManager
   ],
   inputs: [
-    'longitude', 'latitude', 'zoom', 'minZoom', 'maxZoom', 'mapType'],
+    'longitude', 'latitude', 'zoom', 'minZoom', 'maxZoom', 'mapType', 'controls'],
      outputs: ['mapClick', 'actionTick']
     ,
   template: `
@@ -32,6 +32,7 @@ export class YaMap implements  OnInit, OnChanges
   minZoom: number;
   maxZoom: number;
   mapType: any = 'yandex#map';
+  controls: any[] = [];
 
   mapInit: boolean = false;
 
@@ -49,7 +50,13 @@ export class YaMap implements  OnInit, OnChanges
     }
 
     private _initMapInstance(el: HTMLElement) {
-          this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType});   
+          if(this.controls.length > 0){
+            this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType, controls: this.controls});   
+          }
+          else{
+             this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType});   
+
+          }
 
           this._handleMapMouseEvents();
     }

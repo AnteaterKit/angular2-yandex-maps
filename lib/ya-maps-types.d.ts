@@ -63,4 +63,5 @@ export interface MapOptions {
     maxZoom?: number;
     center?: any;
     type: any;
+    controls?: any[];
 }

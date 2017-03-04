@@ -10,6 +10,7 @@ export declare class YaMap implements OnInit, OnChanges {
     minZoom: number;
     maxZoom: number;
     mapType: any;
+    controls: any[];
     mapInit: boolean;
     private _observableSubscriptions;
     mapClick: EventEmitter<mapTypes.MapClickMouseEvent>;
