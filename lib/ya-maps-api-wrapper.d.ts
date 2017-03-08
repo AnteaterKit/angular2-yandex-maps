@@ -20,5 +20,6 @@ export declare class YaMapsAPIWrapper {
     createMarker(marker: YaMarker): Promise<mapTypes.Marker>;
     createClaster(claster: YaClaster): Promise<mapTypes.Claster>;
     createObjectManager(objectManager: YaObjectManager): Promise<any>;
+    navigateToGeoObject(objectManager: any, id: any): void;
     checkYaSciptLoaded(): any;
 }

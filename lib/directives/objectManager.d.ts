@@ -1,12 +1,13 @@
-import { SimpleChange } from '@angular/core';
+import { OnChanges, SimpleChange } from '@angular/core';
 import { ObjectManagerManager } from '../services/managers/objectManager-manager';
-export declare class YaObjectManager {
+export declare class YaObjectManager implements OnChanges {
     private _manager;
     clusterize: boolean;
     clasterPreset: string;
     objectPreset: string;
     gridSize: number;
     datasource: any;
+    selectedObjectId: number;
     private _id;
     private _observableSubscriptions;
     private _addedToManger;

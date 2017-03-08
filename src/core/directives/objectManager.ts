@@ -14,15 +14,16 @@ let markerId = 0;
   providers: [
     YaMapsAPIWrapper
   ],
-  inputs: [ 'clusterize', 'datasource', 'clasterPreset', 'objectPreset', 'gridSize']
+  inputs: [ 'clusterize', 'datasource', 'clasterPreset', 'objectPreset', 'gridSize', 'selectedObjectId']
 })
-export class YaObjectManager //implements OnChanges, OnDestroy  
+export class YaObjectManager implements OnChanges//, OnDestroy  
 {
     clusterize: boolean = false;
     clasterPreset: string = 'islands#blueIcon';
     objectPreset: string = 'islands#blueClusterIcons';
     gridSize: number = 0;
     datasource: any;
+    selectedObjectId: number;
 
     private _id: string;
     private _observableSubscriptions: Subscription[] = [];
@@ -45,6 +46,12 @@ export class YaObjectManager //implements OnChanges, OnDestroy
      // this._addEventListeners();
       return;
     }
+
+    if(changes["selectedObjectId"])
+    {
+        this._manager.navigateToGeoObject(this, this.selectedObjectId);
+    }
+
   }
 
   /*private _addEventListeners() {

@@ -128,9 +128,18 @@ export class YaMapsAPIWrapper {
                    nativeObjectManager.objects.options.set('preset', objectManager.objectPreset);
                    nativeObjectManager.clusters.options.set('preset', objectManager.clasterPreset);
                    map.geoObjects.add(nativeObjectManager);
-                 
                   return nativeObjectManager;
         });
+  }
+
+  navigateToGeoObject(objectManager: any, id: any)
+  {
+      let obj = objectManager.objects.getById(id);
+      if(obj)
+      {
+         this.setCenter(obj.geometry.coordinates[0], obj.geometry.coordinates[1]);
+          objectManager.objects.balloon.open(id);
+      }
   }
 
   checkYaSciptLoaded()

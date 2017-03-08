@@ -18,4 +18,18 @@ export class ObjectManagerManager {
     const managerPromise = this._mapsWrapper.createObjectManager(manager);
     this._managers.set(manager, managerPromise);
   }
+
+  navigateToGeoObject(manager: YaObjectManager, id: number)
+  {
+        this.getNativeManager(manager).then((p: any)=>
+      {
+           this._mapsWrapper.navigateToGeoObject(p, id);
+      });
+       
+  }
+
+  getNativeManager(manager: YaObjectManager): Promise<ObjectManager> {
+    return this._managers.get(manager);
+  }
+
 }
