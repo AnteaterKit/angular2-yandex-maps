@@ -4,6 +4,7 @@ import * as mapTypes from './ya-maps-types';
 import { YaMapsAPILoader } from './services/ya-maps-loader';
 import { YaMarker } from './directives/marker';
 import { YaClaster } from './directives/claster';
+import { YaObjectManager } from './directives/objectManager';
 import { DocumentRef } from './utils/browser-globals';
 export declare class YaMapsAPIWrapper {
     private _loader;
@@ -18,5 +19,6 @@ export declare class YaMapsAPIWrapper {
     subscribeToMapEvent<E>(eventName: string): Observable<E>;
     createMarker(marker: YaMarker): Promise<mapTypes.Marker>;
     createClaster(claster: YaClaster): Promise<mapTypes.Claster>;
+    createObjectManager(objectManager: YaObjectManager): Promise<any>;
     checkYaSciptLoaded(): any;
 }

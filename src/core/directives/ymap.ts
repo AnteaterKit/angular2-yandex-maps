@@ -4,6 +4,7 @@ import {Subscription} from 'rxjs/Subscription';
 import {YaMapsAPIWrapper} from '../ya-maps-api-wrapper';
 import {MarkerManager} from '../services/managers/marker-manager';
 import {ClasterManager} from '../services/managers/claster-manager';
+import {ObjectManagerManager} from '../services/managers/objectManager-manager';
 import * as mapTypes from '../ya-maps-types';
 
 @Component({
@@ -11,7 +12,8 @@ import * as mapTypes from '../ya-maps-types';
   providers: [
     YaMapsAPIWrapper,
     MarkerManager,
-    ClasterManager
+    ClasterManager,
+    ObjectManagerManager
   ],
   inputs: [
     'longitude', 'latitude', 'zoom', 'minZoom', 'maxZoom', 'mapType', 'controls'],
@@ -107,7 +109,6 @@ export class YaMap implements  OnInit, OnChanges
                    this.longitude = coords[1];
                    const value = <mapTypes.MapClickMouseEvent>{lat: coords[0], lng: coords[1]};
                    e.emitter.emit(value);
-                   console.log('emit');
                 });
                 
               });

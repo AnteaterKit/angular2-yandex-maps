@@ -6,6 +6,7 @@ import * as mapTypes from './ya-maps-types';
 import {YaMapsAPILoader} from './services/ya-maps-loader';
 import {YaMarker} from './directives/marker';
 import {YaClaster} from './directives/claster';
+import {YaObjectManager} from './directives/objectManager';
 import {DocumentRef, WindowRef} from './utils/browser-globals';
 
 declare var ymaps: any;
@@ -108,6 +109,28 @@ export class YaMapsAPIWrapper {
             return clusterer;
           });
 
+  }
+
+  createObjectManager(objectManager: YaObjectManager)
+  {
+      return this._map.then((map: mapTypes.YandexMap) => {
+              
+                  if(objectManager.datasource.length == 0)
+                      return;
+
+                  let nativeObjectManager = new ymaps.ObjectManager({
+                      clusterize: objectManager.clusterize,
+                      gridSize: objectManager.gridSize
+                  });
+
+                  nativeObjectManager.add(objectManager.datasource);
+
+                   nativeObjectManager.objects.options.set('preset', objectManager.objectPreset);
+                   nativeObjectManager.clusters.options.set('preset', objectManager.clasterPreset);
+                   map.geoObjects.add(nativeObjectManager);
+                 
+                  return nativeObjectManager;
+        });
   }
 
   checkYaSciptLoaded()

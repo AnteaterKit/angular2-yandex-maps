@@ -65,3 +65,7 @@ export interface MapOptions {
     type: any;
     controls?: any[];
 }
+export interface ObjectManager {
+    clusterize: boolean;
+    objects: any[];
+}
