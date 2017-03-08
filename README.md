@@ -12,15 +12,15 @@
 
 
 #### Live Demo Plnkr
-#### Simple marker with balloon
+#### Простая метка с balloon
 https://plnkr.co/edit/2m3qE90MxPghI9DKjML6?p=preview
-#### ngFor markers with draggable
+#### ngFor метки draggable
 https://plnkr.co/edit/8njMNbV9vjYTSfyP3fxI?p=preview
-#### Change map position
+#### Изменение позиций карты
 https://plnkr.co/edit/9K1fAZbpgDDoZYUfIdVo?p=preview
-#### Claster
+#### Кластеры
 https://plnkr.co/edit/rpJpm8FnWWsuJoScAFAN?p=preview
-#### Icon Presets
+#### Изменение иконок
 https://plnkr.co/edit/dm8EJt8Waa61yKsZRRrM?p=preview
 
 #### Install
