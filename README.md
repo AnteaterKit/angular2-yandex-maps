@@ -12,6 +12,8 @@
 
 
 #### Live Demo Plnkr
+#### Работа с большим числом объектов через ObjectManager
+https://plnkr.co/edit/mq8VzzINPYXOInPOS2mQ?p=preview
 #### Простая метка с balloon
 https://plnkr.co/edit/2m3qE90MxPghI9DKjML6?p=preview
 #### ngFor метки draggable
