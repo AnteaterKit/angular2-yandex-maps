@@ -13,46 +13,38 @@ declare var ymaps: any;
 
 @Injectable()
 export class YaMapsAPIWrapper {
-
-    
     _map: Promise<mapTypes.YandexMap>;
     private _mapResolver: (value?: mapTypes.YandexMap) => void;
     private _documentRef: DocumentRef;
-    
-     constructor(private _loader: YaMapsAPILoader, private _zone: NgZone,  d: DocumentRef) {
+
+    constructor(private _loader: YaMapsAPILoader, private _zone: NgZone,  d: DocumentRef) {
        this._documentRef = d;
        this._map =  new Promise<mapTypes.YandexMap>((resolve: () => void) => { this._mapResolver = resolve; });
     }
 
   createMap(el: HTMLElement, mapOptions: mapTypes.MapOptions): Promise<void> {
-  
-     var res = this._loader.load().then(() => {
-           let create = () => setTimeout(() => 
-                {
-                  if(ymaps.Map)
-                  {
+     let res = this._loader.load().then(() => {
+           let create = () => setTimeout(() =>  {
+                  if(ymaps.Map)  {
                     const map = new ymaps.Map(el, mapOptions);
-                    this._mapResolver(<mapTypes.YandexMap>map);            
+                    this._mapResolver(<mapTypes.YandexMap>map);
                   }
                   else{
                     create();
                   }
                 }, 100);
-            create();
-       
+            create(); 
       }).catch(e => console.log(e));
       return res;
   }
 
-  setCenter(latitude: number, longitude: number)
-  {
+  setCenter(latitude: number, longitude: number){
       this._map.then((map: mapTypes.YandexMap) => {
           map.setCenter([latitude, longitude]);
       });
   }
 
-  getCenter(): Promise<void>
-  {
+  getCenter(): Promise<void>{
        return this._map.then((map: mapTypes.YandexMap) => {
           return map.getCenter();
       });
@@ -68,10 +60,7 @@ export class YaMapsAPIWrapper {
 
   createMarker(marker: YaMarker): Promise<mapTypes.Marker> {
     return this._map.then((map: mapTypes.YandexMap) => {
-        var m = new ymaps.Placemark([marker.latitude, marker.longitude], 
-              { 
-               
-                balloonContentHeader: marker.balloonContentHeader,
+        let m = new ymaps.Placemark([marker.latitude, marker.longitude], { balloonContentHeader: marker.balloonContentHeader,
                 balloonContentBody: marker.balloonContentBody,
                 balloonContentFooter: marker.balloonContentFooter,
                 iconContent: marker.iconContent
@@ -85,11 +74,16 @@ export class YaMapsAPIWrapper {
     });
   }
 
+  removeGeo(overlay: any){
+     this._map.then((map: mapTypes.YandexMap) => {
+          map.geoObjects.remove(overlay);
+      });
+  }
+
   createClaster(claster: YaClaster): Promise<mapTypes.Claster> 
   {
       return this._map.then((map: mapTypes.YandexMap) => {
-        
-            if(claster.markers.length == 0)
+          if(claster.markers.length == 0)
                 return;
 
             let myGeoObjects: Array<any>;
@@ -102,7 +96,7 @@ export class YaMapsAPIWrapper {
                 myGeoObjects.push(point);
             });
 
-            var clusterer = new ymaps.Clusterer({});
+            let clusterer = new ymaps.Clusterer({});
             clusterer.add(myGeoObjects);
             map.geoObjects.add(clusterer);
 
@@ -114,8 +108,7 @@ export class YaMapsAPIWrapper {
   createObjectManager(objectManager: YaObjectManager)
   {
       return this._map.then((map: mapTypes.YandexMap) => {
-              
-                  if(objectManager.datasource.length == 0)
+               if(objectManager.datasource.length == 0)
                       return;
 
                   let nativeObjectManager = new ymaps.ObjectManager({
@@ -132,8 +125,7 @@ export class YaMapsAPIWrapper {
         });
   }
 
-  navigateToGeoObject(objectManager: any, id: any)
-  {
+  navigateToGeoObject(objectManager: any, id: any){
       let obj = objectManager.objects.getById(id);
       if(obj)
       {
@@ -142,9 +134,7 @@ export class YaMapsAPIWrapper {
       }
   }
 
-  checkYaSciptLoaded()
-  {
+  checkYaSciptLoaded(){
       return this._documentRef.getNativeDocument().getElementById('YaScript');
   }
-  
 }

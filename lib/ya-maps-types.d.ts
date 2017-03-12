@@ -5,6 +5,7 @@ export interface YandexMap extends MVCObject {
     setCenter(param: any[]): void;
     getCenter(): any;
     events: any;
+    removeOverlay(overlay: any): void;
 }
 export interface LatLng {
     constructor(lat: number, lng: number): void;

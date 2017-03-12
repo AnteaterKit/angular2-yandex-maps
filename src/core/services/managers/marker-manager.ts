@@ -21,8 +21,10 @@ export class MarkerManager {
     }
     return m.then((m: Marker) => {
       return this._zone.run(() => {
-        m.setMap(null);
-        this._markers.delete(marker);
+         this.getNativeMarker(marker).then((m: Marker) => {
+            this._mapsWrapper.removeGeo(m);
+            this._markers.delete(marker);
+        });
       });
     });
   }
@@ -32,10 +34,8 @@ export class MarkerManager {
     this._markers.set(marker, markerPromise);
   }
 
-  showBalloon(marker: YaMarker)
-  {
-      this.getNativeMarker(marker).then((m: Marker)=>
-      {
+  showBalloon(marker: YaMarker){
+      this.getNativeMarker(marker).then((m: Marker) => {
           m.balloon.open();
       });
 

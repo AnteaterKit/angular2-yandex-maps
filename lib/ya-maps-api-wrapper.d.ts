@@ -18,6 +18,7 @@ export declare class YaMapsAPIWrapper {
     getCenter(): Promise<void>;
     subscribeToMapEvent<E>(eventName: string): Observable<E>;
     createMarker(marker: YaMarker): Promise<mapTypes.Marker>;
+    removeGeo(overlay: any): void;
     createClaster(claster: YaClaster): Promise<mapTypes.Claster>;
     createObjectManager(objectManager: YaObjectManager): Promise<any>;
     navigateToGeoObject(objectManager: any, id: any): void;

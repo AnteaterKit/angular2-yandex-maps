@@ -1,5 +1,4 @@
-import {Directive, EventEmitter, OnChanges, OnDestroy, SimpleChange,
-  AfterContentInit, ContentChildren, QueryList} from '@angular/core';
+import {Directive, EventEmitter, OnChanges, OnDestroy, SimpleChange } from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 
 import {YaMapsAPIWrapper} from '../ya-maps-api-wrapper';
@@ -15,11 +14,12 @@ let markerId = 0;
     YaMapsAPIWrapper
   ],
   inputs: [
-    'latitude', 'longitude', 'balloonLayout', 'balloonContentHeader', 'balloonContentBody', 'balloonContentFooter', 'draggable', 'preset', 'iconContent'],
+    'latitude', 'longitude', 'balloonLayout', 'balloonContentHeader', 'balloonContentBody', 'balloonContentFooter', 
+    'draggable', 'preset', 'iconContent'],
   outputs: ['markerClick', 'dragEnd']
 })
-export class YaMarker implements OnChanges, OnDestroy  
-{
+
+export class YaMarker implements OnChanges, OnDestroy {
     latitude: number;
     longitude: number;
     balloonLayout: any;
@@ -38,12 +38,10 @@ export class YaMarker implements OnChanges, OnDestroy
     markerClick: EventEmitter<void> = new EventEmitter<void>();
     dragEnd: EventEmitter<mapTypes.MapMouseEvent> = new EventEmitter<mapTypes.MapMouseEvent>();
 
-    constructor(private _markerManager: MarkerManager)
-    {
+    constructor(private _markerManager: MarkerManager){
         this._id = (markerId++).toString();
     }
 
- 
   ngOnChanges(changes: {[key: string]: SimpleChange}) {
     if (!this._markerAddedToManger) {
 
@@ -56,21 +54,18 @@ export class YaMarker implements OnChanges, OnDestroy
 
   private _addEventListeners() {
 
-    //click event
+    // click event
     const cs = this._markerManager.createEventObservable('click', this).subscribe(() => {
-      
       this._markerManager.showBalloon(this);
       this.markerClick.emit(null);
     });
     this._observableSubscriptions.push(cs);
-
-    //dragend event 
+    // dragend event 
     const ds = this._markerManager.createEventObservable<mapTypes.MouseEvent>('dragend', this).subscribe((e: mapTypes.MouseEvent) => {
 
-      var thisPlacemark = e.get('target');
-      var coords = thisPlacemark.geometry.getCoordinates();
-      this._markerManager.getNativeMarker(this).then((m: Marker)=>
-      {
+      let thisPlacemark = e.get('target');
+      let coords = thisPlacemark.geometry.getCoordinates();
+      this._markerManager.getNativeMarker(this).then((m: Marker) => {
           this.dragEnd.emit(<mapTypes.MapMouseEvent>{lat: coords[0], lng: coords[1], nativeMarker: m});
       });
     });
@@ -78,6 +73,7 @@ export class YaMarker implements OnChanges, OnDestroy
   }
 
   ngOnDestroy() {
-   console.log('destroy');
+     this._markerManager.deleteMarker(this);
+     this._observableSubscriptions.forEach((s) => s.unsubscribe());
   }
 }
