@@ -12,6 +12,8 @@
 
 
 #### Live Demo Plnkr
+#### Добавление маркеров admin panel
+https://plnkr.co/edit/djaxM0nKECMynWLJwmjO?p=preview
 #### Работа с большим числом объектов через ObjectManager
 https://plnkr.co/edit/mq8VzzINPYXOInPOS2mQ?p=preview
 #### Простая метка с balloon
