@@ -12,6 +12,7 @@ export declare class YaMarker implements OnChanges, OnDestroy {
     draggable: boolean;
     preset: string;
     iconContent: string;
+    showInfo: boolean;
     private _markerAddedToManger;
     private _id;
     private _observableSubscriptions;

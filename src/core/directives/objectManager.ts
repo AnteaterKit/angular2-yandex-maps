@@ -16,7 +16,7 @@ let markerId = 0;
   ],
   inputs: [ 'clusterize', 'datasource', 'clasterPreset', 'objectPreset', 'gridSize', 'selectedObjectId']
 })
-export class YaObjectManager implements OnChanges//, OnDestroy  
+export class YaObjectManager implements OnChanges
 {
     clusterize: boolean = false;
     clasterPreset: string = 'islands#blueIcon';
@@ -29,9 +29,6 @@ export class YaObjectManager implements OnChanges//, OnDestroy
     private _observableSubscriptions: Subscription[] = [];
     private _addedToManger: boolean = false;
 
-    //markerClick: EventEmitter<void> = new EventEmitter<void>();
-    //dragEnd: EventEmitter<mapTypes.MapMouseEvent> = new EventEmitter<mapTypes.MapMouseEvent>();
-
     constructor(private _manager: ObjectManagerManager)
     {
         this._id = (markerId++).toString();
@@ -43,7 +40,6 @@ export class YaObjectManager implements OnChanges//, OnDestroy
 
       this._manager.add(this);
       this._addedToManger = true;
-     // this._addEventListeners();
       return;
     }
 
@@ -53,31 +49,4 @@ export class YaObjectManager implements OnChanges//, OnDestroy
     }
 
   }
-
-  /*private _addEventListeners() {
-
-    //click event
-    const cs = this._markerManager.createEventObservable('click', this).subscribe(() => {
-      
-      this._markerManager.showBalloon(this);
-      this.markerClick.emit(null);
-    });
-    this._observableSubscriptions.push(cs);
-
-    //dragend event 
-    const ds = this._markerManager.createEventObservable<mapTypes.MouseEvent>('dragend', this).subscribe((e: mapTypes.MouseEvent) => {
-
-      var thisPlacemark = e.get('target');
-      var coords = thisPlacemark.geometry.getCoordinates();
-      this._markerManager.getNativeMarker(this).then((m: Marker)=>
-      {
-          this.dragEnd.emit(<mapTypes.MapMouseEvent>{lat: coords[0], lng: coords[1], nativeMarker: m});
-      });
-    });
-    this._observableSubscriptions.push(ds);
-  }
-
-  ngOnDestroy() {
-   console.log('destroy');
-  }*/
 }
