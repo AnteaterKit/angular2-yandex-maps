@@ -19,10 +19,8 @@ export class ObjectManagerManager {
     this._managers.set(manager, managerPromise);
   }
 
-  navigateToGeoObject(manager: YaObjectManager, id: number)
-  {
-        this.getNativeManager(manager).then((p: any)=>
-      {
+  navigateToGeoObject(manager: YaObjectManager, id: number) {
+        this.getNativeManager(manager).then((p: any) => {
            this._mapsWrapper.navigateToGeoObject(p, id);
       });
        
@@ -30,6 +28,12 @@ export class ObjectManagerManager {
 
   getNativeManager(manager: YaObjectManager): Promise<ObjectManager> {
     return this._managers.get(manager);
+  }
+
+  setFilter(manager: YaObjectManager, filter: any) {
+     this.getNativeManager(manager).then((p: any) => {
+           this._mapsWrapper.objectManagerSetFilter(p, filter);
+      });
   }
 
 }

@@ -10,4 +10,5 @@ export declare class ObjectManagerManager {
     add(manager: YaObjectManager): void;
     navigateToGeoObject(manager: YaObjectManager, id: number): void;
     getNativeManager(manager: YaObjectManager): Promise<ObjectManager>;
+    setFilter(manager: YaObjectManager, filter: any): void;
 }

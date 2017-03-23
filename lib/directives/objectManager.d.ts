@@ -8,6 +8,7 @@ export declare class YaObjectManager implements OnChanges {
     gridSize: number;
     datasource: any;
     selectedObjectId: number;
+    filter: any;
     private _id;
     private _observableSubscriptions;
     private _addedToManger;

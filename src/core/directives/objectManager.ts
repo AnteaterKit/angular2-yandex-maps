@@ -14,7 +14,7 @@ let markerId = 0;
   providers: [
     YaMapsAPIWrapper
   ],
-  inputs: [ 'clusterize', 'datasource', 'clasterPreset', 'objectPreset', 'gridSize', 'selectedObjectId']
+  inputs: [ 'clusterize', 'datasource', 'clasterPreset', 'objectPreset', 'gridSize', 'selectedObjectId', 'filter']
 })
 export class YaObjectManager implements OnChanges
 {
@@ -24,18 +24,18 @@ export class YaObjectManager implements OnChanges
     gridSize: number = 0;
     datasource: any;
     selectedObjectId: number;
+    filter: any;
+
 
     private _id: string;
     private _observableSubscriptions: Subscription[] = [];
     private _addedToManger: boolean = false;
 
-    constructor(private _manager: ObjectManagerManager)
-    {
+    constructor(private _manager: ObjectManagerManager) {
         this._id = (markerId++).toString();
     }
 
- 
-  ngOnChanges(changes: {[key: string]: SimpleChange}) {
+    ngOnChanges(changes: {[key: string]: SimpleChange}) {
     if (!this._addedToManger) {
 
       this._manager.add(this);
@@ -43,9 +43,12 @@ export class YaObjectManager implements OnChanges
       return;
     }
 
-    if(changes["selectedObjectId"])
-    {
+    if (changes['selectedObjectId']) {
         this._manager.navigateToGeoObject(this, this.selectedObjectId);
+    }
+    if (changes['filter']) {
+       console.log('filter ' + this.filter);
+        this._manager.setFilter(this, this.filter);
     }
 
   }

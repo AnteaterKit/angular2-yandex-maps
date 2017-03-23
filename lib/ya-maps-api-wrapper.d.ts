@@ -23,4 +23,5 @@ export declare class YaMapsAPIWrapper {
     createObjectManager(objectManager: YaObjectManager): Promise<any>;
     navigateToGeoObject(objectManager: any, id: any): void;
     checkYaSciptLoaded(): any;
+    objectManagerSetFilter(objectManager: any, filter: any): void;
 }

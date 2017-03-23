@@ -105,8 +105,7 @@ export class YaMapsAPIWrapper {
 
   }
 
-  createObjectManager(objectManager: YaObjectManager)
-  {
+  createObjectManager(objectManager: YaObjectManager) {
       return this._map.then((map: mapTypes.YandexMap) => {
                if(objectManager.datasource.length == 0)
                       return;
@@ -137,4 +136,10 @@ export class YaMapsAPIWrapper {
   checkYaSciptLoaded(){
       return this._documentRef.getNativeDocument().getElementById('YaScript');
   }
+
+  objectManagerSetFilter(objectManager: any, filter: any) {
+      console.log(objectManager);
+        objectManager.setFilter(filter);
+  }
+
 }
