@@ -16,7 +16,7 @@ import * as mapTypes from '../ya-maps-types';
     ObjectManagerManager
   ],
   inputs: [
-    'longitude', 'latitude', 'zoom', 'minZoom', 'maxZoom', 'mapType', 'controls'],
+    'longitude', 'latitude', 'zoom', 'minZoom', 'maxZoom', 'mapType', 'controls', 'panToObjects'],
      outputs: ['mapClick', 'actionTick']
     ,
   template: `
@@ -37,6 +37,7 @@ export class YaMap implements  OnInit, OnChanges
   controls: any[] = [];
 
   mapInit: boolean = false;
+  panToObjects: mapTypes.PanToObjects;
 
   private _observableSubscriptions: Subscription[] = [];
 
@@ -52,10 +53,10 @@ export class YaMap implements  OnInit, OnChanges
     }
 
     private _initMapInstance(el: HTMLElement) {
-          if(this.controls.length > 0){
-            this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType, controls: this.controls});   
-          }
-          else{
+          if (this.controls.length > 0) {
+            this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType, 
+              controls: this.controls});
+          } else {
              this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType});   
 
           }
@@ -66,6 +67,7 @@ export class YaMap implements  OnInit, OnChanges
     ngOnChanges(changes: SimpleChanges) {
        if(this.mapInit){
           this.updatePosition(changes);
+          this.panTo(changes);
        }
     }
 
@@ -75,6 +77,14 @@ export class YaMap implements  OnInit, OnChanges
         }
         this._mapsWrapper.setCenter(this.latitude, this.longitude);
     }
+
+    private panTo(changes: SimpleChanges){
+        if (changes['panToObjects'] == null){
+            return;
+        }
+        this._mapsWrapper.panTo(this.panToObjects.points, this.panToObjects.params);
+    }
+
 
     private _handleMapMouseEvents() {
         interface Emitter {

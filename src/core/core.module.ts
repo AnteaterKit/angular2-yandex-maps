@@ -36,5 +36,11 @@ export class YaCoreModule {
         ...BROWSER_GLOBALS_PROVIDERS, {provide: YaMapsAPILoader, useClass: YaMapsAPILoader}
       ],
     };
-  }
+  } 
 }
+
+export function YaCoreModuleForRoot() {
+    return [
+      YaCoreModule.forRoot()
+    ];
+  }

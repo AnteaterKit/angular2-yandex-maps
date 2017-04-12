@@ -50,6 +50,12 @@ export class YaMapsAPIWrapper {
       });
   }
 
+  panTo(points: any[], options: any[]){
+    this._map.then((map: mapTypes.YandexMap) => {
+            map.panTo(points, options);
+        });
+  }
+
   subscribeToMapEvent<E>(eventName: string): Observable<E> {
     return Observable.create((observer: Observer<E>) => {
       this._map.then((m: mapTypes.YandexMap) => {

@@ -12,6 +12,7 @@ export declare class YaMap implements OnInit, OnChanges {
     mapType: any;
     controls: any[];
     mapInit: boolean;
+    panToObjects: mapTypes.PanToObjects;
     private _observableSubscriptions;
     mapClick: EventEmitter<mapTypes.MapClickMouseEvent>;
     actionTick: EventEmitter<mapTypes.MapClickMouseEvent>;
@@ -20,5 +21,6 @@ export declare class YaMap implements OnInit, OnChanges {
     private _initMapInstance(el);
     ngOnChanges(changes: SimpleChanges): void;
     private updatePosition(changes);
+    private panTo(changes);
     private _handleMapMouseEvents();
 }

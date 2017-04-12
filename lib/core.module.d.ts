@@ -8,3 +8,4 @@ export declare function coreDirectives(): (typeof YaMarker | typeof YaClaster | 
 export declare class YaCoreModule {
     static forRoot(): ModuleWithProviders;
 }
+export declare function YaCoreModuleForRoot(): ModuleWithProviders[];

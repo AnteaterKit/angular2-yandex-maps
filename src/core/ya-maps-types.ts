@@ -6,6 +6,7 @@ export interface YandexMap extends MVCObject {
    geoObjects: any;
    setCenter(param: any[]): void;
    getCenter(): any;
+   panTo(points: any[], options: any[]): void;
    events: any;
    removeOverlay(overlay: any): void;
 }
@@ -14,6 +15,10 @@ export interface LatLng {
   constructor(lat: number, lng: number): void;
   lat(): number;
   lng(): number;
+}
+export interface PanToObjects {
+  points: any[];
+  params: any[];
 }
 
 export interface Marker extends MVCObject {
@@ -29,13 +34,11 @@ export interface Marker extends MVCObject {
   draggable: boolean;
 }
 
-export interface Claster
-{
+export interface Claster{
    constructor(): void;
 }
 
-export interface MarkerClaster
-{
+export interface MarkerClaster{
    lat: number;
    lng: number;
    balloonContentHeader: string;
@@ -64,7 +67,7 @@ export interface MapOptions {
   controls?: any[];
 }
 
-export interface ObjectManager{
+export interface ObjectManager {
     clusterize: boolean;
     objects: any[];
 }

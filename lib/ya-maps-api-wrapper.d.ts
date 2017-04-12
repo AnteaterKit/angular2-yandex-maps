@@ -16,6 +16,7 @@ export declare class YaMapsAPIWrapper {
     createMap(el: HTMLElement, mapOptions: mapTypes.MapOptions): Promise<void>;
     setCenter(latitude: number, longitude: number): void;
     getCenter(): Promise<void>;
+    panTo(points: any[], options: any[]): void;
     subscribeToMapEvent<E>(eventName: string): Observable<E>;
     createMarker(marker: YaMarker): Promise<mapTypes.Marker>;
     removeGeo(overlay: any): void;

@@ -1,6 +1,6 @@
 {
   "name": "angular2-yandex-maps",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "yandex-maps-directive",
   "typings": "index.d.ts",
   "main": "src/core.module.js",
