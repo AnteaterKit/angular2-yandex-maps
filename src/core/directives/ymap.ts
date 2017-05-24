@@ -34,7 +34,7 @@ export class YaMap implements  OnInit, OnChanges
   minZoom: number;
   maxZoom: number;
   mapType: any = 'yandex#map';
-  controls: any[] = [];
+  controls: any[] = null;
 
   mapInit: boolean = false;
   panToObjects: mapTypes.PanToObjects;
@@ -53,10 +53,13 @@ export class YaMap implements  OnInit, OnChanges
     }
 
     private _initMapInstance(el: HTMLElement) {
-          if (this.controls.length > 0) {
+          if (this.controls != null) {
+             console.log('controls');
             this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType, 
               controls: this.controls});
+             
           } else {
+            console.log('no controls');
              this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType});   
 
           }
