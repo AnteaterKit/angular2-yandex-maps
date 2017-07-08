@@ -32,6 +32,18 @@ https://plnkr.co/edit/dm8EJt8Waa61yKsZRRrM?p=preview
 npm install angular2-yandex-maps
 ```
 
+#### index.html
+```
+<html>
+  <head>
+   
+    <script >
+      let exports = {};
+    </script>
+  </head>
+
+```
+
 #### Systemjs.config.js
 ```js
 
