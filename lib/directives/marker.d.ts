@@ -13,6 +13,10 @@ export declare class YaMarker implements OnChanges, OnDestroy {
     preset: string;
     iconContent: string;
     showInfo: boolean;
+    iconLayout: any;
+    iconImageHref: any;
+    iconImageSize: any;
+    iconImageOffset: any;
     private _markerAddedToManger;
     private _id;
     private _observableSubscriptions;

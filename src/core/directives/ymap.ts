@@ -54,12 +54,10 @@ export class YaMap implements  OnInit, OnChanges
 
     private _initMapInstance(el: HTMLElement) {
           if (this.controls != null) {
-             console.log('controls');
             this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType, 
               controls: this.controls});
              
           } else {
-            console.log('no controls');
              this._mapsWrapper.createMap(el, {center: [this.latitude, this.longitude],  zoom: this.zoom, type: this.mapType});   
 
           }

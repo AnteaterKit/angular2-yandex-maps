@@ -32,6 +32,10 @@ export interface Marker extends MVCObject {
   balloonContentBody: string;
   balloonContentFooter: string;
   draggable: boolean;
+  iconLayout: any;
+  iconImageHref: any;
+  iconImageSize: any;
+  iconImageOffset: any;
 }
 
 export interface Claster{

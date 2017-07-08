@@ -73,7 +73,11 @@ export class YaMapsAPIWrapper {
               },
               {
                  draggable: marker.draggable,
-                 preset: marker.preset
+                 preset: marker.preset,
+                 iconLayout: marker.iconLayout, 
+                 iconImageHref: marker.iconImageHref,
+                 iconImageSize:  marker.iconImageSize,
+                 iconImageOffset:  marker.iconImageOffset
               });
         map.geoObjects.add(m);
         return m;
@@ -144,7 +148,6 @@ export class YaMapsAPIWrapper {
   }
 
   objectManagerSetFilter(objectManager: any, filter: any) {
-      console.log(objectManager);
         objectManager.setFilter(filter);
   }
 

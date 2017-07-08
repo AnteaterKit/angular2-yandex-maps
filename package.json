@@ -1,6 +1,6 @@
 {
   "name": "angular2-yandex-maps",
-  "version": "1.0.36",
+  "version": "1.0.40",
   "description": "yandex-maps-directive",
   "typings": "index.d.ts",
   "main": "src/core.module.js",
@@ -41,7 +41,7 @@
     "angular-in-memory-web-api": "~0.3.2",
     "systemjs": "0.20.12",
     "core-js": "^2.4.1",
-    "rxjs": "5.4.0",
+    "rxjs": "5.4.2",
     "zone.js": "^0.8.11",
     "autodts": "~0.0.6"
   },

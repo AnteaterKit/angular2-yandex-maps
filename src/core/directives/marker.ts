@@ -15,7 +15,7 @@ let markerId = 0;
   ],
   inputs: [
     'latitude', 'longitude', 'balloonLayout', 'balloonContentHeader', 'balloonContentBody', 'balloonContentFooter', 
-    'draggable', 'preset', 'iconContent', 'showInfo'],
+    'draggable', 'preset', 'iconContent', 'showInfo', 'iconLayout', 'iconImageHref', 'iconImageSize', 'iconImageOffset'],
   outputs: ['markerClick', 'dragEnd']
 })
 
@@ -30,6 +30,13 @@ export class YaMarker implements OnChanges, OnDestroy {
     preset: string = 'islands#blueIcon';
     iconContent: string;
     showInfo: boolean;
+    //default#image
+    iconLayout: any;
+    iconImageHref: any;
+    //[30, 42]
+    iconImageSize: any;
+    //[-5, -38]
+    iconImageOffset: any;
 
     private _markerAddedToManger: boolean = false;
     private _id: string;
