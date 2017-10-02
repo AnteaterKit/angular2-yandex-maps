@@ -9,7 +9,7 @@ import { ObjectManagerManager } from '../services/managers/objectManager-manager
 import * as mapTypes from '../ya-maps-types';
 
 @Component({
-  selector: 'ya-map',
+  selector: '[ya-map]',
   providers: [
     YaMapsAPIWrapper,
     MarkerManager,
@@ -23,7 +23,7 @@ import * as mapTypes from '../ya-maps-types';
   `
 })
 // tslint:disable-next-line:component-class-suffix
-export class YaMap implements OnInit, OnChanges {
+export class YaMapDirective implements OnInit, OnChanges {
 
   @Input() public longitude: number = 0;
   @Input() public latitude: number = 0;

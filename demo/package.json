@@ -23,7 +23,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "angular2-yandex-maps": "../angular2-yandex-maps-v1.0.40.tgz",
+    "angular2-yandex-maps": "../angular2-yandex-maps-v1.0.41.tgz",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.14"

@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 
-import { YaObjectManager } from './../../directives/objectManager';
+import { YaObjectManager } from './../../directives/yaObjectManager.directive';
 import { YaMapsAPIWrapper } from '../../ya-maps-api-wrapper';
 import { ObjectManager } from '../../ya-maps-types';
 

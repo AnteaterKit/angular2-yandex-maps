@@ -267,9 +267,9 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular2-yandex-maps@../angular2-yandex-maps-v1.0.40.tgz:
-  version "1.0.40"
-  resolved "../angular2-yandex-maps-v1.0.40.tgz#018f38fc6edd872efbe1cc3e03ae274640a15b98"
+angular2-yandex-maps@../angular2-yandex-maps-v1.0.41.tgz:
+  version "1.0.41"
+  resolved "../angular2-yandex-maps-v1.0.41.tgz#ca7e0f99513df2f362a34e55fc98600347dd9429"
 
 ansi-escapes@^3.0.0:
   version "3.0.0"

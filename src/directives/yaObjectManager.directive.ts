@@ -11,7 +11,7 @@ import { ObjectManagerManager } from '../services/managers/objectManager-manager
 let markerId = 0;
 
 @Directive({
-  selector: 'ya-object-manager',
+  selector: '[ya-object-manager]',
   providers: [
     YaMapsAPIWrapper
   ]
