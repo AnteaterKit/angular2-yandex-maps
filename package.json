@@ -28,7 +28,8 @@
         "preversion": "npm run ci",
         "test": "karma start",
         "test:watch": "karma start --auto-watch --no-single-run",
-        "tslint": "tslint"
+        "tslint": "tslint",
+        "aot:test":"yarn pack && cd demo && npm run produp"
     },
     "keywords": [],
     "author": "",

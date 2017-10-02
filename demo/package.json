@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "update": "yarn remove angular2-yandex-maps && yarn add ../angular2-yandex-maps-v1.0.40.tgz",
-    "produp":"npm run update && ng build --prod"
+    "produp": "npm run update && ng build --prod"
   },
   "private": true,
   "dependencies": {

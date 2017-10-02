@@ -17,8 +17,10 @@
         "outDir": "lib",
         "rootDir": "./tmp/src-inlined",
         "lib": [
-            "es2015",
-            "dom"
+            "dom",
+            "es5",
+            "es2015.promise",
+            "es2015.collection"
         ]
     },
     "files": [
