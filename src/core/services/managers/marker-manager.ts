@@ -21,8 +21,10 @@ export class MarkerManager {
     }
     return m.then((m: Marker) => {
       return this._zone.run(() => {
-        m.setMap(null);
-        this._markers.delete(marker);
+         this.getNativeMarker(marker).then((m: Marker) => {
+            this._mapsWrapper.removeGeo(m);
+            this._markers.delete(marker);
+        });
       });
     });
   }
@@ -32,6 +34,13 @@ export class MarkerManager {
     this._markers.set(marker, markerPromise);
   }
 
+  showBalloon(marker: YaMarker){
+      this.getNativeMarker(marker).then((m: Marker) => {
+          m.balloon.open();
+      });
+
+  }
+
   getNativeMarker(marker: YaMarker): Promise<Marker> {
     return this._markers.get(marker);
   }
@@ -39,7 +48,7 @@ export class MarkerManager {
   createEventObservable<T>(eventName: string, marker: YaMarker): Observable<T> {
     return Observable.create((observer: Observer<T>) => {
       this._markers.get(marker).then((m: Marker) => {
-        m.addListener(eventName, (e: T) => this._zone.run(() => observer.next(e)));
+        m.events.add(eventName, (e: T) => this._zone.run(() => observer.next(e)));
       });
     });
   }

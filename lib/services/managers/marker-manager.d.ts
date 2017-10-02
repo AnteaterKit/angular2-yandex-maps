@@ -10,6 +10,7 @@ export declare class MarkerManager {
     constructor(_mapsWrapper: YaMapsAPIWrapper, _zone: NgZone);
     deleteMarker(marker: YaMarker): Promise<void>;
     addMarker(marker: YaMarker): void;
+    showBalloon(marker: YaMarker): void;
     getNativeMarker(marker: YaMarker): Promise<Marker>;
     createEventObservable<T>(eventName: string, marker: YaMarker): Observable<T>;
 }
