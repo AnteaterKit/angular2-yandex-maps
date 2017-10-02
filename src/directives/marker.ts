@@ -73,7 +73,7 @@ export class YaMarker implements OnChanges, OnDestroy {
       this.markerClick.emit(null);
     });
     this._observableSubscriptions.push(cs);
-    // dragend event 
+    // dragend event
     // tslint:disable-next-line:max-line-length
     const ds = this._markerManager.createEventObservable<mapTypes.MouseEvent>('dragend', this).subscribe((e: mapTypes.MouseEvent) => {
 

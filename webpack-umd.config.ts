@@ -12,7 +12,7 @@ export default {
     'index.umd.min': './src/index.ts',
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'lib'),
     filename: '[name].js',
     libraryTarget: 'umd',
     library: 'ticktock'

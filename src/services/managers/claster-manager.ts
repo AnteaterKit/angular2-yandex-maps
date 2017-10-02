@@ -21,7 +21,7 @@ export class ClasterManager {
   /* getNativeMarker(marker: YaMarker): Promise<Marker> {
      return this._markers.get(marker);
    }
- 
+
    createEventObservable<T>(eventName: string, marker: YaMarker): Observable<T> {
      return Observable.create((observer: Observer<T>) => {
        this._markers.get(marker).then((m: Marker) => {

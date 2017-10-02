@@ -38,7 +38,10 @@ export interface Marker extends MVCObject {
   setPosition(latLng: LatLng | LatLngLiteral): void;
 }
 
-export interface Claster{}
+export interface Claster {
+  // tslint:disable-next-line:no-misused-new
+  constructor(): void;
+}
 
 export interface MarkerClaster {
   lat: number;

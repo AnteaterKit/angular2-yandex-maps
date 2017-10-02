@@ -14,14 +14,14 @@
         "pretty": true,
         "stripInternal": true,
         "skipLibCheck": true,
-        "outDir": "dist",
+        "outDir": "lib",
         "rootDir": "./tmp/src-inlined"
     },
     "files": [
         "./tmp/src-inlined/index.ts"
     ],
     "angularCompilerOptions": {
-        "genDir": "dist",
+        "genDir": "lib",
         "debug": false,
         "skipTemplateCodegen": true,
         "skipMetadataEmit": false,
