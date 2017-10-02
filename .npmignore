@@ -1,24 +1,29 @@
-.idea
+# Node
+node_modules
+npm-debug.log
 
-*.ts
-!*.d.ts
+# Yarn
+yarn-error.log
 
-/typings.json
-/typings/
-/node_modules/
-/.gitignore
-/.npmignore
-/.travis.yml
-/license-banner.txt
+# JetBrains
+.idea/
 
-/test
-/karma.conf.js
-/karma-test-shim.js
+# VS Code
+.vscode/
 
-/rollup.config.js
-/rollup-min.config.js
+# Windows
+Thumbs.db
+Desktop.ini
 
-/systemjs.config.js
+# Mac
+.DS_Store
 
-/tsconfig.json
-/tsconfig-build.json
+# Temporary files
+coverage/
+demo/
+docs
+tmp
+
+# Library files
+src/
+
