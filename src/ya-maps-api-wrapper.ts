@@ -4,9 +4,9 @@ import { Observer } from 'rxjs/Observer';
 
 import * as mapTypes from './ya-maps-types';
 import { YaMapsAPILoader } from './services/ya-maps-loader';
-import { YaMarker } from './directives/marker';
-import { YaClaster } from './directives/claster';
-import { YaObjectManager } from './directives/objectManager';
+import { YaMarkerDirective } from './directives/yamarker.directive';
+import { YaClasterDirective } from './directives/claster.directive';
+import { YaObjectManager } from './directives/yaObjectManager.directive';
 import { DocumentRef, WindowRef } from './utils/browser-globals';
 
 declare var ymaps: any;
@@ -65,7 +65,7 @@ export class YaMapsAPIWrapper {
         });
     }
 
-    public createMarker(marker: YaMarker): Promise<mapTypes.Marker> {
+    public createMarker(marker: YaMarkerDirective): Promise<mapTypes.Marker> {
         return this._map.then((map: mapTypes.YandexMap) => {
             const m = new ymaps.Placemark([marker.latitude, marker.longitude], {
                 balloonContentHeader: marker.balloonContentHeader,
@@ -92,7 +92,7 @@ export class YaMapsAPIWrapper {
         });
     }
 
-    public createClaster(claster: YaClaster): Promise<mapTypes.Claster> {
+    public createClaster(claster: YaClasterDirective): Promise<mapTypes.Claster> {
         return this._map.then((map: mapTypes.YandexMap) => {
             if (claster.markers.length === 0) {
                 return;

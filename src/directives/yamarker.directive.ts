@@ -10,14 +10,13 @@ import { Marker } from '../ya-maps-types';
 let markerId = 0;
 
 @Directive({
-  selector: 'ya-marker',
+  selector: '[ya-marker]',
   providers: [
     YaMapsAPIWrapper
   ]
 })
 
-// tslint:disable-next-line:directive-class-suffix
-export class YaMarker implements OnChanges, OnDestroy {
+export class YaMarkerDirective implements OnChanges, OnDestroy {
   @Input() public latitude: number;
   @Input() public longitude: number;
   @Input() public balloonLayout: any;

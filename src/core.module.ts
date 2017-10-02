@@ -1,8 +1,8 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { YaMap } from './directives/ymap';
-import { YaMarker } from './directives/marker';
-import { YaClaster } from './directives/claster';
-import { YaObjectManager } from './directives/objectManager';
+import { YaMapDirective } from './directives/ymap.directive';
+import { YaMarkerDirective } from './directives/yamarker.directive';
+import { YaClasterDirective } from './directives/claster.directive';
+import { YaObjectManager } from './directives/yaObjectManager.directive';
 import { YaMapsAPILoader } from './services/ya-maps-loader';
 import { BROWSER_GLOBALS_PROVIDERS } from './utils/browser-globals';
 
@@ -13,9 +13,9 @@ export * from './ya-maps-types';
  */
 export function coreDirectives() {
   return [
-    YaMap,
-    YaMarker,
-    YaClaster,
+    YaMapDirective,
+    YaMarkerDirective,
+    YaClasterDirective,
     YaObjectManager
   ];
 }

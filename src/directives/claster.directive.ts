@@ -10,14 +10,13 @@ import { Claster, MarkerClaster } from '../ya-maps-types';
 let clasterId = 0;
 
 @Directive({
-    selector: 'ya-claster',
+    selector: '[ya-claster]',
     providers: [
         YaMapsAPIWrapper
     ]
 })
 
-// tslint:disable-next-line:directive-class-suffix
-export class YaClaster implements OnChanges, OnDestroy {
+export class YaClasterDirective implements OnChanges, OnDestroy {
     @Input() public markers: any[];
 
     private _id: string;

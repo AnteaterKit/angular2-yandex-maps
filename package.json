@@ -1,6 +1,6 @@
 {
     "name": "angular2-yandex-maps",
-    "version": "1.0.40",
+    "version": "1.0.41",
     "description": "yandex-maps-directive",
     "typings": "index.d.ts",
     "main": "src/core.module.js",
@@ -21,13 +21,15 @@
         "lint": "npm run tslint 'src/**/*.ts'",
         "ngcompile": "node_modules/.bin/ngc -p tsconfig-aot.json",
         "postversion": "git push && git push --tags",
+        "prepack": "npm run build",
         "prebuild": "rimraf lib tmp",
         "prebuild:watch": "rimraf lib tmp",
         "prepublishOnly": "npm run ci",
         "preversion": "npm run ci",
         "test": "karma start",
         "test:watch": "karma start --auto-watch --no-single-run",
-        "tslint": "tslint"
+        "tslint": "tslint",
+        "aot:test":"yarn pack && cd demo && npm run produp"
     },
     "keywords": [],
     "author": "",
