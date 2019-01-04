@@ -1,36 +1,30 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "noEmit": true,
-        "sourceMap": true,
-        "declaration": false,
-        "noImplicitAny": false,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "lib": [
-            "es2015",
-            "dom"
-        ],
-        "typeRoots": [
-            "./node_modules/@types"
-        ],
-        "types": [
-            "jasmine",
-            "karma",
-            "node",
-            "webpack",
-            "webpack-env"
-        ]
-    },
-    "include": [
-        "src/**/*.ts"
+  "compileOnSave": true,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
     ],
-    "exclude": [
-        "src/**/*.spec.ts",
-        "node_modules",
-        "demo",
-        "lib"
-    ]
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "yamapng": [
+        "dist/yamapng"
+      ],
+      "yamapng/*": [
+        "dist/yamapng/*"
+      ]
+    }
+  }
 }
