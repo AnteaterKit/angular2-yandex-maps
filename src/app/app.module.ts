@@ -13,7 +13,7 @@ import { YaCoreModule } from 'projects/yamapng/src/lib/core.module';
     BrowserModule,
     YamapngModule,
     YaCoreModule.forRoot({
-      apiKey: ''
+      apiKey: 'b9bb51c8-03a3-4722-b234-5f0e2316e94f'
     })
   ],
   providers: [],
