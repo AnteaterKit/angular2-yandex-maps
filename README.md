@@ -32,17 +32,24 @@ https://plnkr.co/edit/dm8EJt8Waa61yKsZRRrM?p=preview
 npm i yamapng
 ```
 
-#### index.html
+#### imports
 ```
-<html>
-  <head>
-   
-    <script >
-      let exports = {};
-    </script>
-  </head>
+ @NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    YamapngModule,
+    YaCoreModule.forRoot({
+      apiKey: 'YOUR_KEY'
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+}) 
+```
 
-```
 ### API
 
 #### Тег ya-map & ya-marker:

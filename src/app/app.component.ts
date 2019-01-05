@@ -16,7 +16,9 @@ export class AppComponent {
       lat: 55.847,
       lng: 38.6,
       balloonHeader: '22U',
-      balloonBody: '<img class="page_avatar_img" src="https://www.tsum.ru/local/gulp/dist/assets/images/logo.svg" alt="Tsum" width="200" height="200">',
+      balloonBody: `<img class="page_avatar_img"
+                      src="https://www.tsum.ru/local/gulp/dist/assets/images/logo.svg"
+                      alt="Tsum" width="200" height="200">`,
       balloonFooter: 'Footette',
       draggable: true,
       preset: 'islands#violetStretchyIcon',
@@ -30,7 +32,9 @@ export class AppComponent {
       lat: 55.847,
       lng: 37.6,
       balloonHeader: '22U',
-      balloonBody: '<img class="page_avatar_img" src="http://project-volna.ru/wp-content/uploads/udf_foundry/images/logo.png" alt="Volna" width="200" height="200">',
+      balloonBody: `<img class="page_avatar_img"
+                      src="http://project-volna.ru/wp-content/uploads/udf_foundry/images/logo.png"
+                      alt="Volna" width="200" height="200">`,
       balloonFooter: 'Footette',
       draggable: true,
       preset: 'islands#blueSportIcon',
@@ -43,7 +47,9 @@ export class AppComponent {
       lat: 55.547,
       lng: 37.2,
       balloonHeader: '22U',
-      balloonBody: '<img class="page_avatar_img" src="http://caviarclothes.ru/wp-content/uploads/2013/06/mini-logo1.png" width="200" height="200">',
+      balloonBody: `<img class="page_avatar_img"
+                      src="http://caviarclothes.ru/wp-content/uploads/2013/06/mini-logo1.png"
+                      width="200" height="200">`,
       balloonFooter: 'Footette',
       draggable: true,
       preset: 'islands#oliveStretchyIcon',
@@ -57,7 +63,9 @@ export class AppComponent {
       lat: 55.247,
       lng: 35.2,
       balloonHeader: '22U',
-      balloonBody: '<img class="page_avatar_img" src="http://rodinastore.ru/wp-content/themes/rodina/images/logo.png" width="200" height="200">',
+      balloonBody: `<img class="page_avatar_img"
+                      src="http://rodinastore.ru/wp-content/themes/rodina/images/logo.png"
+                      width="200" height="200">`,
       balloonFooter: 'Footette',
       draggable: true,
       preset: 'islands#blueSportIcon',
@@ -71,7 +79,9 @@ export class AppComponent {
       lat: 55.347,
       lng: 37.0,
       balloonHeader: '22U',
-      balloonBody: '<img class="page_avatar_img" src="https://brandshop.ru/catalog/view/theme/default/i/logo-white.png" width="200" height="200">',
+      balloonBody: `<img class="page_avatar_img"
+                      src="https://brandshop.ru/catalog/view/theme/default/i/logo-white.png"
+                      width="200" height="200">`,
       balloonFooter: 'Footette',
       draggable: true,
       preset: 'islands#oliveStretchyIcon',
