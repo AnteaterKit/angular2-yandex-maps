@@ -1,7 +1,6 @@
 tmp/
 node_modules/
 dist/
-lib/
 docs/
 coverage/
 package-lock.json
