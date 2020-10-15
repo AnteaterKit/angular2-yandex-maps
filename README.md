@@ -1,5 +1,7 @@
 [Angular2]: https://angular.io/
 
+Читайте мой блог на medium https://ashatilovdev.medium.com/
+
 ![Yandex Maps API as an Angular2 components](https://raw.githubusercontent.com/AnteaterKit/angular2-yandex-maps/master/ya-an.png)
 #### Yandex Maps API as an Angular2 components
 
